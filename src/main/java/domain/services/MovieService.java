@@ -33,6 +33,7 @@ public class MovieService {
 				m.setName(movie.getName());
 				m.setProdYear(movie.getProdYear());
 				m.setMovieType(movie.getMovieType());
+				m.setRating(movie.getRating());
 			}
 		}
 	}

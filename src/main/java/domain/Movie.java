@@ -8,6 +8,7 @@ public class Movie {
 	private String prodYear;
 	private String movieType;
 	private List<Comment> comments;
+	private double rating;
 
 	public int getId() {
 		return id;
@@ -47,5 +48,13 @@ public class Movie {
 
 	public void setComments(List<Comment> comments) {
 		this.comments = comments;
+	}
+
+	public double getRating() {
+		return rating;
+	}
+
+	public void setRating(double rating) {
+		this.rating = rating;
 	}
 }

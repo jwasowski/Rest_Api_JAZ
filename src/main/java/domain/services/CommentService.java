@@ -1,20 +1,20 @@
 package domain.services;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import domain.Comment;
+import domain.Movie;
 
 public class CommentService {
-	private static List<Comment> db = new ArrayList<Comment>();
-	private static int currentId = 1;
+	private Movie movie;
+	private static int currentId = -1;
 
-	public List<Comment> getAll(){
-		return db;
+	public List<Comment> getAll() {
+		return movie.getComments();
 	}
-	
+
 	public Comment get(int id) {
-		for (Comment c : db) {
+		for (Comment c : movie.getComments()) {
 			if (c.getId() == id)
 				return c;
 		}
@@ -23,11 +23,11 @@ public class CommentService {
 
 	public void add(Comment c) {
 		c.setId(++currentId);
-		db.add(c);
+		movie.getComments().add(c);
 	}
 
 	public void update(Comment comment) {
-		for (Comment c : db) {
+		for (Comment c : movie.getComments()) {
 			if (c.getId() == comment.getId()) {
 				c.setName(comment.getName());
 				c.setDate(comment.getDate());
@@ -37,6 +37,14 @@ public class CommentService {
 	}
 
 	public void delete(Comment c) {
-		db.remove(c);
+		movie.getComments().remove(c);
+	}
+
+	public Movie getMovie() {
+		return movie;
+	}
+
+	public void setMovie(Movie movie) {
+		this.movie = movie;
 	}
 }

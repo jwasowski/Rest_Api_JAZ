@@ -5,15 +5,14 @@ import java.util.List;
 
 import domain.Movie;
 
-
 public class MovieService {
 	private static List<Movie> db = new ArrayList<Movie>();
-	private static int currentId = 1;
+	private static int currentId = -1;
 
-	public List<Movie> getAll(){
+	public List<Movie> getAll() {
 		return db;
 	}
-	
+
 	public Movie get(int id) {
 		for (Movie m : db) {
 			if (m.getId() == id)
@@ -34,6 +33,7 @@ public class MovieService {
 				m.setProdYear(movie.getProdYear());
 				m.setMovieType(movie.getMovieType());
 				m.setRating(movie.getRating());
+				m.setComments(movie.getComments());
 			}
 		}
 	}

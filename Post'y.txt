@@ -1,0 +1,18 @@
+Movie Post 
+{
+	"name" : "Film",
+	"prodYear" : "2018",
+	"movieType" : "IT"
+}
+
+Comment Post
+{
+	"name" : "Yolo",
+	"date" : "2018",
+	"contents" : "Komentarz"
+}
+
+Rate Post
+{
+	"rating" : "7"
+}

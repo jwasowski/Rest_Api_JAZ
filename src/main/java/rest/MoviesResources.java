@@ -16,11 +16,16 @@ import javax.ws.rs.core.Response;
 
 import domain.Comment;
 import domain.Movie;
+import domain.Rating;
+import domain.services.CommentService;
 import domain.services.MovieService;
+import domain.services.RateService;
 
 @Path("/movies")
 public class MoviesResources {
 	private MovieService db = new MovieService();
+	private CommentService cService = new CommentService();
+	private RateService rSerivce = new RateService();
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
@@ -49,12 +54,12 @@ public class MoviesResources {
 	@PUT
 	@Path("/{id}")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response update(@PathParam("id") int id, Movie p) {
+	public Response update(@PathParam("id") int id, Movie m) {
 		Movie result = db.get(id);
 		if (result == null)
 			return Response.status(404).build();
-		p.setId(id);
-		db.update(p);
+		m.setId(id);
+		db.update(m);
 		return Response.ok().build();
 	}
 
@@ -64,7 +69,7 @@ public class MoviesResources {
 		Movie result = db.get(id);
 		if (result == null)
 			return Response.status(404).build();
-		db.update(result);
+		db.delete(result);
 		return Response.ok().build();
 	}
 
@@ -79,26 +84,44 @@ public class MoviesResources {
 			result.setComments(new ArrayList<Comment>());
 		return result.getComments();
 	}
-	
+
 	@POST
 	@Path("/{movieId}/comments")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response addCar(@PathParam("movieId") int movieId, Comment comment){
+	public Response addComment(@PathParam("movieId") int movieId, Comment comment) {
 		Movie result = db.get(movieId);
-		if(result==null)
+		cService.setMovie(result);
+		if (result == null)
 			return Response.status(404).build();
-		if(result.getComments()==null)
+		if (result.getComments() == null)
 			result.setComments(new ArrayList<Comment>());
-		result.getComments().add(comment);
+		cService.add(comment);
+		return Response.ok().build();
+	}
+
+	@DELETE
+	@Path("/{movieId}/comments/{commentId}")
+	public Response deleteComment(@PathParam("movieId") int movieId, @PathParam("commentId") int commentId) {
+		Movie result = db.get(movieId);
+		cService.setMovie(result);
+		if (result == null || result.getComments().get(commentId) == null)
+			return Response.status(404).build();
+		cService.delete(result.getComments().get(commentId));
 		return Response.ok().build();
 	}
 	
-	@DELETE
-	@Path("/{movieId}/comments/{commentId}")
-	public Response deleteComment(@PathParam("movieId") int movieId,@PathParam("commentId") int commentId ) {
+	@POST
+	@Path("/{movieId}/rate")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response rateMovie(@PathParam("movieId") int movieId,Rating rating){
 		Movie result = db.get(movieId);
+		rSerivce.setMovie(result);
 		if (result == null)
 			return Response.status(404).build();
+		if(result.getRatingList() == null)
+			result.setRatingList(new ArrayList<Rating>());
+		rSerivce.add(rating);
+		rSerivce.setAverageRating();
 		db.update(result);
 		return Response.ok().build();
 	}

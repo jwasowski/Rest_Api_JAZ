@@ -9,6 +9,7 @@ public class Movie {
 	private String movieType;
 	private List<Comment> comments;
 	private double rating;
+	private List<Rating> ratingList;
 
 	public int getId() {
 		return id;
@@ -57,4 +58,15 @@ public class Movie {
 	public void setRating(double rating) {
 		this.rating = rating;
 	}
+
+	public List<Rating> getRatingList() {
+		return ratingList;
+	}
+
+	public void setRatingList(List<Rating> ratingList) {
+		this.ratingList = ratingList;
+	}
+	
+	
+
 }

@@ -34,6 +34,8 @@ public class MovieService {
 				m.setMovieType(movie.getMovieType());
 				m.setRating(movie.getRating());
 				m.setComments(movie.getComments());
+				m.setRatingList(movie.getRatingList());
+				m.setActorLinks(movie.getActorLinks());
 			}
 		}
 	}

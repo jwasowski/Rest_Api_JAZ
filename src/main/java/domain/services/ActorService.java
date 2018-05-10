@@ -31,6 +31,7 @@ public class ActorService {
 			if (a.getId() == actor.getId()) {
 				a.setName(actor.getName());
 				a.setSurname(actor.getSurname());
+				a.setMovieLinks(actor.getMovieLinks());
 			}
 		}
 	}

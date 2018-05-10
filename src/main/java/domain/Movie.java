@@ -10,6 +10,7 @@ public class Movie {
 	private List<Comment> comments;
 	private double rating;
 	private List<Rating> ratingList;
+	private List<String> actorLinks;
 
 	public int getId() {
 		return id;
@@ -65,6 +66,14 @@ public class Movie {
 
 	public void setRatingList(List<Rating> ratingList) {
 		this.ratingList = ratingList;
+	}
+
+	public List<String> getActorLinks() {
+		return actorLinks;
+	}
+
+	public void setActorLinks(List<String> actorLinks) {
+		this.actorLinks = actorLinks;
 	}
 	
 	

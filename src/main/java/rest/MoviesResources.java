@@ -76,7 +76,7 @@ public class MoviesResources {
 	@GET
 	@Path("/{movieId}/comments")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Comment> getCars(@PathParam("movieId") int movieId) {
+	public List<Comment> getComments(@PathParam("movieId") int movieId) {
 		Movie result = dbService.get(movieId);
 		if (result == null)
 			return null;
@@ -124,5 +124,17 @@ public class MoviesResources {
 		rSerivce.setAverageRating();
 		dbService.update(result);
 		return Response.ok().build();
+	}
+	
+	@GET
+	@Path("/{movieId}/actors")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<String> getActors(@PathParam("movieId") int movieId) {
+		Movie result = dbService.get(movieId);
+		if (result == null)
+			return null;
+		if (result.getActorLinks() == null)
+			result.setActorLinks(new ArrayList<String>());
+		return result.getActorLinks();
 	}
 }

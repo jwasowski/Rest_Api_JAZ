@@ -7,7 +7,7 @@ public class Actor {
 	private int id;
 	private String name;
 	private String Surname;
-	private List<Movie> movies;
+	private List<String> movieLinks;
 
 	public int getId() {
 		return id;
@@ -33,12 +33,12 @@ public class Actor {
 		Surname = surname;
 	}
 
-	public List<Movie> getMovies() {
-		return movies;
+	public List<String> getMovieLinks() {
+		return movieLinks;
 	}
 
-	public void setMovies(List<Movie> movies) {
-		this.movies = movies;
+	public void setMovieLinks(List<String> movieLinks) {
+		this.movieLinks = movieLinks;
 	}
 
 }

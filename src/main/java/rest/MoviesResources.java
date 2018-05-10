@@ -23,28 +23,28 @@ import domain.services.RateService;
 
 @Path("/movies")
 public class MoviesResources {
-	private MovieService db = new MovieService();
+	private MovieService dbService = new MovieService();
 	private CommentService cService = new CommentService();
 	private RateService rSerivce = new RateService();
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Movie> getAll() {
-		return db.getAll();
+		return dbService.getAll();
 	}
 
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response Add(Movie movie) {
-		db.add(movie);
+		dbService.add(movie);
 		return Response.ok(movie.getId()).build();
 	}
 
 	@GET
-	@Path("/{id}")
+	@Path("/{movieId}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response get(@PathParam("id") int id) {
-		Movie result = db.get(id);
+	public Response get(@PathParam("movieId") int movieId) {
+		Movie result = dbService.get(movieId);
 		if (result == null) {
 			return Response.status(404).build();
 		}
@@ -52,24 +52,24 @@ public class MoviesResources {
 	}
 
 	@PUT
-	@Path("/{id}")
+	@Path("/{movieId}")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response update(@PathParam("id") int id, Movie m) {
-		Movie result = db.get(id);
+	public Response update(@PathParam("movieId") int movieId, Movie m) {
+		Movie result = dbService.get(movieId);
 		if (result == null)
 			return Response.status(404).build();
-		m.setId(id);
-		db.update(m);
+		m.setId(movieId);
+		dbService.update(m);
 		return Response.ok().build();
 	}
 
 	@DELETE
-	@Path("/{id}")
-	public Response deleteMovie(@PathParam("id") int id) {
-		Movie result = db.get(id);
+	@Path("/{movieId}")
+	public Response deleteMovie(@PathParam("movieId") int movieId) {
+		Movie result = dbService.get(movieId);
 		if (result == null)
 			return Response.status(404).build();
-		db.delete(result);
+		dbService.delete(result);
 		return Response.ok().build();
 	}
 
@@ -77,7 +77,7 @@ public class MoviesResources {
 	@Path("/{movieId}/comments")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Comment> getCars(@PathParam("movieId") int movieId) {
-		Movie result = db.get(movieId);
+		Movie result = dbService.get(movieId);
 		if (result == null)
 			return null;
 		if (result.getComments() == null)
@@ -89,7 +89,7 @@ public class MoviesResources {
 	@Path("/{movieId}/comments")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response addComment(@PathParam("movieId") int movieId, Comment comment) {
-		Movie result = db.get(movieId);
+		Movie result = dbService.get(movieId);
 		cService.setMovie(result);
 		if (result == null)
 			return Response.status(404).build();
@@ -102,11 +102,11 @@ public class MoviesResources {
 	@DELETE
 	@Path("/{movieId}/comments/{commentId}")
 	public Response deleteComment(@PathParam("movieId") int movieId, @PathParam("commentId") int commentId) {
-		Movie result = db.get(movieId);
+		Movie result = dbService.get(movieId);
 		cService.setMovie(result);
 		if (result == null || result.getComments().get(commentId) == null)
 			return Response.status(404).build();
-		cService.delete(result.getComments().get(commentId));
+		cService.delete(cService.get(commentId));
 		return Response.ok().build();
 	}
 	
@@ -114,7 +114,7 @@ public class MoviesResources {
 	@Path("/{movieId}/rate")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response rateMovie(@PathParam("movieId") int movieId,Rating rating){
-		Movie result = db.get(movieId);
+		Movie result = dbService.get(movieId);
 		rSerivce.setMovie(result);
 		if (result == null)
 			return Response.status(404).build();
@@ -122,7 +122,7 @@ public class MoviesResources {
 			result.setRatingList(new ArrayList<Rating>());
 		rSerivce.add(rating);
 		rSerivce.setAverageRating();
-		db.update(result);
+		dbService.update(result);
 		return Response.ok().build();
 	}
 }

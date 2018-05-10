@@ -35,9 +35,10 @@ public class CommentService {
 			}
 		}
 	}
-
-	public void delete(Comment c) {
+	
+	public void delete(Comment c){
 		movie.getComments().remove(c);
+		
 	}
 
 	public Movie getMovie() {

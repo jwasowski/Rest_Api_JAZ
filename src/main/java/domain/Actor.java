@@ -2,12 +2,14 @@ package domain;
 
 import java.util.List;
 
+import javax.ws.rs.core.Link;
+
 public class Actor {
 
 	private int id;
 	private String name;
-	private String Surname;
-	private List<String> movieLinks;
+	private String surname;
+	private List<Link> movieLinks;
 
 	public int getId() {
 		return id;
@@ -26,18 +28,18 @@ public class Actor {
 	}
 
 	public String getSurname() {
-		return Surname;
+		return surname;
 	}
 
 	public void setSurname(String surname) {
-		Surname = surname;
+		this.surname = surname;
 	}
 
-	public List<String> getMovieLinks() {
+	public List<Link> getMovieLinks() {
 		return movieLinks;
 	}
 
-	public void setMovieLinks(List<String> movieLinks) {
+	public void setMovieLinks(List<Link> movieLinks) {
 		this.movieLinks = movieLinks;
 	}
 

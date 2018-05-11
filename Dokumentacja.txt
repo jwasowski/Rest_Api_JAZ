@@ -1,0 +1,133 @@
+	Dokumentacja projektu
+===================================
+	Postac obiektow JSON:		  *
+***********************************
+Legenda:					  
+***********************************
+<$> - wartosc liczbowa (int)
+<$!> - wartosc liczbowa (float)
+<Content> - wartosc tekstowa (String)
+***********************************
+Movie:
+{
+        "actorLinks": [
+            {
+                "params": {
+                    "rel": "<Content>"
+                },
+                "rel": "<Content>",
+                "rels": [
+                    "<Content>"
+                ],
+                "uri": "<Content>",
+                "uriBuilder": {
+                    "absolute": true
+                }
+            }
+        ],
+        "id": <$>,
+        "movieType": "<Content>",
+        "name": "<Content>",
+        "prodYear": "<Content>",
+        "rating": <$!>,
+        "ratingList": [
+            {
+                "id": <$>,
+                "rating": <$!>
+            },
+            {
+                "id": <$>,
+                "rating": <$!>
+            }
+        ]
+    }
+***********************************
+Comment:
+{
+	"name" : "<Content>",
+	"date" : "<Content>",
+	"contents" : "<Content>"
+}
+***********************************
+Rate:
+{
+	"rating" : "<Content>"
+}
+***********************************
+Actor:
+{
+        "id": <$>,
+        "movieLinks": [
+            {
+                "params": {
+                    "rel": "<Content>"
+                },
+                "rel": "<Content>",
+                "rels": [
+                    "<Content>"
+                ],
+                "uri": "<Content>",
+                "uriBuilder": {
+                    "absolute": true
+                }
+            }
+        ],
+        "name": "<Content>",
+        "surname": "<Content>"
+    }
+	
+***********************************
+	Adresy Url:					  *
+***********************************
+
+http://localhost:8080/samplerestapp/rest/test
+
+http://localhost:8080/samplerestapp/rest/movies
+
+http://localhost:8080/samplerestapp/rest/movies/{movieId}
+
+http://localhost:8080/samplerestapp/rest/movies/{movieId}/comments
+
+http://localhost:8080/samplerestapp/rest/movies//{movieId}/comments/{commentId}
+
+http://localhost:8080/samplerestapp/rest/movies/{movieId}/rate
+
+http://localhost:8080/samplerestapp/rest/actors
+
+http://localhost:8080/samplerestapp/rest/actors/{actorId}
+
+http://localhost:8080/samplerestapp/rest/actors/{actorId}/movies/{movieId}
+
+
+***********************************
+	Przyklady JSON'ow:			  *
+***********************************
+Movie:
+{
+	"name" : "Horror w kodzie",
+	"prodYear" : "2018",
+	"movieType" : "IT-Horror"
+}
+***********************************
+Comment:
+{
+	"name" : "Jaroslaw Kret",
+	"date" : "2018-05-11",
+	"contents" : "Komentarz"
+}
+***********************************
+Rate:
+{
+	"rating" : "7"
+}
+***********************************
+Actor:
+{
+	"name" : "Los",
+	"surname" : "Superktos"
+}
+
+Wiecej przykladow znajduje sie w dolaczonym pliku, ktorego mozna importowac w Postman
+i wykonac (nazwa pliku: Requests.postman_collection).
+link Github: https://github.com/jwasowski/Rest_Api_JAZ
+

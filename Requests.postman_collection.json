@@ -1,0 +1,1074 @@
+{
+	"info": {
+		"_postman_id": "a7b36830-ffb8-41f9-99ac-c032df31019e",
+		"name": "Requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Movies",
+			"description": "",
+			"item": [
+				{
+					"name": "PostMovie",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\" : \"Horror w kodzie\",\r\n\t\"prodYear\" : \"2018\",\r\n\t\"movieType\" : \"IT-Horror\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/samplerestapp/rest/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"samplerestapp",
+								"rest",
+								"movies"
+							]
+						},
+						"description": "Tworzy film"
+					},
+					"response": []
+				},
+				{
+					"name": "GetMovies",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\" : \"Jaroslaw Kret\",\r\n\t\"date\" : \"2018-05-11\",\r\n\t\"contents\" : \"Komentarz\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/samplerestapp/rest/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"samplerestapp",
+								"rest",
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteMovie0",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/samplerestapp/rest/movies/0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"samplerestapp",
+								"rest",
+								"movies",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateMovie0",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\" : \"Horror w kodzie - Powrot Nullpointer'a\",\r\n\t\"prodYear\" : \"2018\",\r\n\t\"movieType\" : \"IT-Horror\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/samplerestapp/rest/movies/0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"samplerestapp",
+								"rest",
+								"movies",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostMovie1",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\" : \"Horror w kodzie 2\",\r\n\t\"prodYear\" : \"2019\",\r\n\t\"movieType\" : \"IT-Horror\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/samplerestapp/rest/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"samplerestapp",
+								"rest",
+								"movies"
+							]
+						},
+						"description": "Tworzy film"
+					},
+					"response": []
+				},
+				{
+					"name": "PostMovie2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\" : \"Horror w kodzie 10\",\r\n\t\"prodYear\" : \"2019\",\r\n\t\"movieType\" : \"IT-Horror\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/samplerestapp/rest/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"samplerestapp",
+								"rest",
+								"movies"
+							]
+						},
+						"description": "Tworzy film"
+					},
+					"response": []
+				},
+				{
+					"name": "PostMovie3",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\" : \"Zemsta Rest'a\",\r\n\t\"prodYear\" : \"2012\",\r\n\t\"movieType\" : \"IT-Horror\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/samplerestapp/rest/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"samplerestapp",
+								"rest",
+								"movies"
+							]
+						},
+						"description": "Tworzy film"
+					},
+					"response": []
+				},
+				{
+					"name": "PostMovie4",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\" : \"Tanczacy z HTTP\",\r\n\t\"prodYear\" : \"2009\",\r\n\t\"movieType\" : \"IT-Horror\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/samplerestapp/rest/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"samplerestapp",
+								"rest",
+								"movies"
+							]
+						},
+						"description": "Tworzy film"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"description": "",
+			"item": [
+				{
+					"name": "PostComment0",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\" : \"Jaroslaw Kret\",\r\n\t\"date\" : \"2018-05-11\",\r\n\t\"contents\" : \"Komentarz\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/samplerestapp/rest/movies/0/comments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"samplerestapp",
+								"rest",
+								"movies",
+								"0",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteComment0",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/samplerestapp/rest/movies/0/comments/0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"samplerestapp",
+								"rest",
+								"movies",
+								"0",
+								"comments",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostComment1",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\" : \"Jaroslaw Kret - Klon\",\r\n\t\"date\" : \"2018-05-11\",\r\n\t\"contents\" : \"Komentarz\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/samplerestapp/rest/movies/0/comments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"samplerestapp",
+								"rest",
+								"movies",
+								"0",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostComment2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\" : \"Wasaty Gosc\",\r\n\t\"date\" : \"2018-05-11\",\r\n\t\"contents\" : \"Tu bylem\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/samplerestapp/rest/movies/0/comments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"samplerestapp",
+								"rest",
+								"movies",
+								"0",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostComment3",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\" : \"Lysy Dzik\",\r\n\t\"date\" : \"2018-05-11\",\r\n\t\"contents\" : \"Dobrze strzyza, huehue\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/samplerestapp/rest/movies/0/comments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"samplerestapp",
+								"rest",
+								"movies",
+								"0",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RateMovie",
+			"description": "",
+			"item": [
+				{
+					"name": "RateMovie0",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"rating\" : \"7\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/samplerestapp/rest/movies/0/rate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"samplerestapp",
+								"rest",
+								"movies",
+								"0",
+								"rate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RateMovie01",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"rating\" : \"3\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/samplerestapp/rest/movies/0/rate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"samplerestapp",
+								"rest",
+								"movies",
+								"0",
+								"rate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RateMovie10",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"rating\" : \"9\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/samplerestapp/rest/movies/1/rate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"samplerestapp",
+								"rest",
+								"movies",
+								"1",
+								"rate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RateMovie11",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"rating\" : \"2\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/samplerestapp/rest/movies/1/rate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"samplerestapp",
+								"rest",
+								"movies",
+								"1",
+								"rate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RateMovie20",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"rating\" : \"5\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/samplerestapp/rest/movies/2/rate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"samplerestapp",
+								"rest",
+								"movies",
+								"2",
+								"rate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RateMovie21",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"rating\" : \"4\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/samplerestapp/rest/movies/2/rate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"samplerestapp",
+								"rest",
+								"movies",
+								"2",
+								"rate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RateMovie30",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"rating\" : \"10\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/samplerestapp/rest/movies/3/rate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"samplerestapp",
+								"rest",
+								"movies",
+								"3",
+								"rate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RateMovie31",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"rating\" : \"1\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/samplerestapp/rest/movies/3/rate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"samplerestapp",
+								"rest",
+								"movies",
+								"3",
+								"rate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Actors",
+			"description": "",
+			"item": [
+				{
+					"name": "PostActor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\" : \"Los\",\r\n\t\"surname\" : \"Superktos\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/samplerestapp/rest/actors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"samplerestapp",
+								"rest",
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateActor0",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\" : \"Gosc\",\r\n\t\"surname\" : \"Superktos\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/samplerestapp/rest/actors/0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"samplerestapp",
+								"rest",
+								"actors",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteActor1",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/samplerestapp/rest/actors/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"samplerestapp",
+								"rest",
+								"actors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetActors",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/samplerestapp/rest/actors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"samplerestapp",
+								"rest",
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LinkActor0WithMovie0",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/samplerestapp/rest/actors/0/movies/0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"samplerestapp",
+								"rest",
+								"actors",
+								"0",
+								"movies",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostActor1",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\" : \"Narcyz\",\r\n\t\"surname\" : \"Z krokowej\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/samplerestapp/rest/actors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"samplerestapp",
+								"rest",
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostActor2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\" : \"Stary\",\r\n\t\"surname\" : \"Czejen\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/samplerestapp/rest/actors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"samplerestapp",
+								"rest",
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostActor3",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\" : \"Eros\",\r\n\t\"surname\" : \"Ramazzotti\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/samplerestapp/rest/actors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"samplerestapp",
+								"rest",
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LinkActor0WithMovie1",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/samplerestapp/rest/actors/0/movies/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"samplerestapp",
+								"rest",
+								"actors",
+								"0",
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LinkActor0WithMovie2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/samplerestapp/rest/actors/1/movies/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"samplerestapp",
+								"rest",
+								"actors",
+								"1",
+								"movies",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LinkActor0WithMovie3",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/samplerestapp/rest/actors/2/movies/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"samplerestapp",
+								"rest",
+								"actors",
+								"2",
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LinkActor0WithMovie4",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/samplerestapp/rest/actors/3/movies/0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"samplerestapp",
+								"rest",
+								"actors",
+								"3",
+								"movies",
+								"0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

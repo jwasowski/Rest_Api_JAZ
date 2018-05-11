@@ -2,6 +2,8 @@ package domain;
 
 import java.util.List;
 
+import javax.ws.rs.core.Link;
+
 public class Movie {
 	private int id;
 	private String name;
@@ -10,7 +12,7 @@ public class Movie {
 	private List<Comment> comments;
 	private double rating;
 	private List<Rating> ratingList;
-	private List<String> actorLinks;
+	private List<Link> actorLinks;
 
 	public int getId() {
 		return id;
@@ -68,14 +70,12 @@ public class Movie {
 		this.ratingList = ratingList;
 	}
 
-	public List<String> getActorLinks() {
+	public List<Link> getActorLinks() {
 		return actorLinks;
 	}
 
-	public void setActorLinks(List<String> actorLinks) {
+	public void setActorLinks(List<Link> actorLinks) {
 		this.actorLinks = actorLinks;
 	}
-	
-	
 
 }

@@ -125,16 +125,4 @@ public class MoviesResources {
 		dbService.update(result);
 		return Response.ok().build();
 	}
-	
-	@GET
-	@Path("/{movieId}/actors")
-	@Produces(MediaType.APPLICATION_JSON)
-	public List<String> getActors(@PathParam("movieId") int movieId) {
-		Movie result = dbService.get(movieId);
-		if (result == null)
-			return null;
-		if (result.getActorLinks() == null)
-			result.setActorLinks(new ArrayList<String>());
-		return result.getActorLinks();
-	}
 }

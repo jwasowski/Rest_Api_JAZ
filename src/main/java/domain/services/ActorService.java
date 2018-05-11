@@ -7,7 +7,7 @@ import domain.Actor;
 
 public class ActorService {
 	private static List<Actor> db = new ArrayList<Actor>();
-	private static int currentId = 1;
+	private static int currentId = -1;
 
 	public List<Actor> getAll(){
 		return db;

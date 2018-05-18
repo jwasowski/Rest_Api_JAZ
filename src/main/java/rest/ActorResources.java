@@ -79,9 +79,9 @@ public class ActorResources {
 		Movie mResult = dbMService.get(movieId);
 		String relation = "";
 		relation += actorId + "w" + movieId;
-		Link linkMovie = Link.fromUri("http://localhost:8080/samplerestapp/rest/movies/{movieId}").rel(relation)
+		Link linkMovie = Link.fromUri("http://localhost:8080/restapp/rest/movies/{movieId}").rel(relation)
 				.build(movieId);
-		Link linkActor = Link.fromUri("http://localhost:8080/samplerestapp/rest/actors/{actorId}").rel(relation)
+		Link linkActor = Link.fromUri("http://localhost:8080/restapp/rest/actors/{actorId}").rel(relation)
 				.build(actorId);
 		if (result.getMovieLinks() == null)
 			result.setMovieLinks(new ArrayList<Link>());

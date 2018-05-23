@@ -8,6 +8,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -16,17 +17,18 @@ import javax.xml.bind.annotation.XmlTransient;
 
 @XmlRootElement
 @Entity
-@NamedQueries({
-@NamedQuery(name="product.all", query="Select p from Product p"),
-@NamedQuery(name="product.id", query="from Product p where p.id=:productId")})
-
+@NamedQueries({ @NamedQuery(name = "product.all", query = "Select p from Product p"),
+		@NamedQuery(name = "product.id", query = "Select p from Product p where p.id=:productId"),
+		@NamedQuery(name = "product.byPCat", query = "Select p from Product p where p.category.id=:productCategoryId"),
+		@NamedQuery(name = "product.byPCatAndPId", query = "Select p from Product p where p.category.id=:productCategoryId and p.id=:productId") })
 public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
 	private double price;
-	private String category;
+	@ManyToOne(fetch = FetchType.LAZY)
+	private ProductCategory category;
 	private List<Comment> commentList = new ArrayList<Comment>();
 
 	public int getId() {
@@ -53,16 +55,16 @@ public class Product {
 		this.price = price;
 	}
 
-	public String getCategory() {
+	public ProductCategory getCategory() {
 		return category;
 	}
 
-	public void setCategory(String category) {
+	public void setCategory(ProductCategory category) {
 		this.category = category;
 	}
-	
-	//@XmlTransient
-	@OneToMany(mappedBy="product", orphanRemoval=true, fetch = FetchType.LAZY)
+
+	@XmlTransient
+	@OneToMany(mappedBy = "product", orphanRemoval = true, fetch = FetchType.LAZY)
 	public List<Comment> getCommentList() {
 		return commentList;
 	}

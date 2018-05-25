@@ -8,19 +8,25 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
 @XmlRootElement
-@Entity
-@NamedQueries({ @NamedQuery(name = "product.all", query = "Select p from Product p"),
-		@NamedQuery(name = "product.id", query = "Select p from Product p where p.id=:productId"),
-		@NamedQuery(name = "product.byPCat", query = "Select p from Product p where p.category.id=:productCategoryId"),
-		@NamedQuery(name = "product.byPCatAndPId", query = "Select p from Product p where p.category.id=:productCategoryId and p.id=:productId") })
+@Entity(name = "Product")
+@Table(name = "product")
+@NamedQueries({ @NamedQuery(name = "product.all", query = "SELECT p FROM Product p"),
+		@NamedQuery(name = "product.id", query = "SELECT p FROM Product p WHERE p.id=:productId"),
+		@NamedQuery(name = "product.byPCat", query = "SELECT p FROM Product p WHERE p.category.id=:productCategoryId"),
+		@NamedQuery(name = "product.byPCatAndPId", query = "SELECT p FROM Product p WHERE p.category.id=:productCategoryId AND p.id=:productId"),
+		@NamedQuery(name = "product.byPCatName", query = "SELECT p FROM Product p JOIN ProductCategory k ON p.category.id=k.id WHERE k.categoryName=:categoryName"),
+		@NamedQuery(name = "product.byPName", query = "SELECT p FROM Product p WHERE p.name LIKE :productName"),
+		@NamedQuery(name = "product.byPPrice", query = "SELECT p FROM Product p WHERE p.price >= :price AND p.price <= :priceTwo") })
 public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,7 +34,10 @@ public class Product {
 	private String name;
 	private double price;
 	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "productCategory_id")
 	private ProductCategory category;
+	@OneToMany(mappedBy = "product", orphanRemoval = true)
+	@JoinColumn(name = "product")
 	private List<Comment> commentList = new ArrayList<Comment>();
 
 	public int getId() {
@@ -64,7 +73,6 @@ public class Product {
 	}
 
 	@XmlTransient
-	@OneToMany(mappedBy = "product", orphanRemoval = true, fetch = FetchType.LAZY)
 	public List<Comment> getCommentList() {
 		return commentList;
 	}
@@ -72,4 +80,5 @@ public class Product {
 	public void setCommentList(List<Comment> commentList) {
 		this.commentList = commentList;
 	}
+
 }

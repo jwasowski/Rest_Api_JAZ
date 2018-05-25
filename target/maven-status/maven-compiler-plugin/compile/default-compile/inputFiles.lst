@@ -1,5 +1,6 @@
 D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\domain\Actor.java
-D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\rest\ProductResources.java
+D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\dto\ProductCategoryDto.java
+D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\rest\CategoryResources.java
 D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\rest\TestRest.java
 D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\domain\Product.java
 D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\domain\services\CommentService.java
@@ -7,9 +8,15 @@ D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\domain\
 D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\domain\services\MovieService.java
 D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\domain\Comment.java
 D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\domain\services\ActorService.java
+D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\dto\CommentDto.java
 D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\rest\MoviesResources.java
+D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\domain\ProductCategory.java
 D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\domain\Movie.java
+D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\domain\Searching.java
 D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\domain\Rating.java
 D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\rest\ActorResources.java
+D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\dto\ProductDto.java
 D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\rest\ApplicationConfig.java
+D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\dto\services\DtoFactory.java
+D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\dto\services\Mapper.java
 D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\domain\services\ProductService.java

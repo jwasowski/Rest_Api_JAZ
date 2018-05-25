@@ -4,25 +4,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 @XmlRootElement
-@Entity
+@Entity(name = "ProductCategory")
+@Table(name = "productCategory")
 @NamedQueries({
-@NamedQuery(name="productCategory.all", query="Select p from ProductCategory p"),
-@NamedQuery(name="productCategory.id", query="from ProductCategory p where p.id=:productCategoryId")})
+@NamedQuery(name="productCategory.all", query="SELECT p FROM ProductCategory p"),
+@NamedQuery(name="productCategory.id", query="SELECT p FROM ProductCategory p WHERE p.id=:productCategoryId")})
 public class ProductCategory {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String categoryName;
+	@OneToMany(mappedBy = "category", orphanRemoval = true)
+	@JoinColumn(name = "category")
 	private List<Product> productList = new ArrayList<Product>();
 
 	public int getId() {
@@ -40,8 +45,9 @@ public class ProductCategory {
 	public void setCategoryName(String categoryName) {
 		this.categoryName = categoryName;
 	}
-
-	@OneToMany(mappedBy = "product", orphanRemoval = true, fetch = FetchType.LAZY)
+	
+	
+	@XmlTransient
 	public List<Product> getProductList() {
 		return productList;
 	}

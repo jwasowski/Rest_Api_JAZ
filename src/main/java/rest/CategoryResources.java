@@ -14,6 +14,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -31,7 +32,6 @@ public class CategoryResources {
 	@PersistenceContext
 	EntityManager em;
 	Mapper mapEntitiesToDto = new Mapper();
-	
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
@@ -204,9 +204,10 @@ public class CategoryResources {
 	}
 
 	@GET
-	@Path("/search/productsByCategory={categoryName}")
+	@Path("/{productCategoryId}/products")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response searchProductsByCategory(@PathParam("categoryName") String categoryName) {
+	public Response searchProductsByCategory(@QueryParam("name") String categoryName,
+			@PathParam("productCategoryId") int productCategoryId) {
 		List<Product> result = em.createNamedQuery("product.byPCatName", Product.class)
 				.setParameter("categoryName", categoryName).getResultList();
 		if (result == null)
@@ -220,9 +221,10 @@ public class CategoryResources {
 	}
 
 	@GET
-	@Path("/search/productsByName={productName}")
+	@Path("/{productCategoryId}/products")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response searchProductsByName(@PathParam("productName") String productName) {
+	public Response searchProductsByName(@QueryParam("name") String productName,
+			@PathParam("productCategoryId") int productCategoryId) {
 		List<Product> result = em.createNamedQuery("product.byPName", Product.class)
 				.setParameter("productName", productName).getResultList();
 		if (result == null)
@@ -236,12 +238,12 @@ public class CategoryResources {
 	}
 
 	@GET
-	@Path("/search/productsByPrice={price}to{priceTwo}")
+	@Path("/{productCategoryId}/products")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response searchProductsByPrice(@PathParam("productCategoryId") int productCategoryId,
-			@PathParam("price") int price, @PathParam("priceTwo") int priceTwo) {
+	public Response searchProductsByPrice(@QueryParam("pC") int pC, @QueryParam("price") int price,
+			@QueryParam("priceTwo") int priceTwo, @PathParam("productCategoryId") int productCategoryId) {
 		List<Product> result = em.createNamedQuery("productCategory.id", Product.class)
-				.setParameter("productCategoryId", productCategoryId).getResultList();
+				.setParameter("productCategoryId", pC).getResultList();
 		if (result == null)
 			return Response.status(404).build();
 		List<ProductDto> productList = new ArrayList<ProductDto>();

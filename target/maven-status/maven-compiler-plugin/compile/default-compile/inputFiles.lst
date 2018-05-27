@@ -12,7 +12,6 @@ D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\dto\Com
 D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\rest\MoviesResources.java
 D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\domain\ProductCategory.java
 D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\domain\Movie.java
-D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\domain\Searching.java
 D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\domain\Rating.java
 D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\rest\ActorResources.java
 D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\dto\ProductDto.java
@@ -20,3 +19,4 @@ D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\rest\Ap
 D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\dto\services\DtoFactory.java
 D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\dto\services\Mapper.java
 D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\domain\services\ProductService.java
+D:\Informatyka\programowanie - cwiczenia\java\Rest_Api_JAZ\src\main\java\domain\Search.java

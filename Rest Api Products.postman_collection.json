@@ -1,0 +1,542 @@
+{
+	"info": {
+		"_postman_id": "4053fd63-4b89-482f-8399-5fd758de33e5",
+		"name": "Rest Api Products",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"description": "",
+			"item": [
+				{
+					"name": "Get Products of Category 1",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"Twoja stara\",\n\t\"price\" : \"9.99\",\n\t\"category\" : \"exotic goods\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/restapp/rest/pCats/1/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restapp",
+								"rest",
+								"pCats",
+								"1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post product in Category 1",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"Fejn produkt\",\n\t\"price\" : \"9.99\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/restapp/rest/pCats/1/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restapp",
+								"rest",
+								"pCats",
+								"1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delet Product 1 in Category 1",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/restapp/rest/pCats/1/products/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restapp",
+								"rest",
+								"pCats",
+								"1",
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product 2",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"Twoja stara\",\n\t\"price\" : \"9.99\",\n\t\"category\" : \"exotic goods\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/restapp/rest/pCats/1/products/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restapp",
+								"rest",
+								"pCats",
+								"1",
+								"products",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post product in Category 2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"Fejn produkt\",\n\t\"price\" : \"9.99\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/restapp/rest/pCats/2/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restapp",
+								"rest",
+								"pCats",
+								"2",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post product in Category 3",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"Fejn produkt\",\n\t\"price\" : \"9.99\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/restapp/rest/pCats/3/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restapp",
+								"rest",
+								"pCats",
+								"3",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post product in Category 4",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"Fejn produkt\",\n\t\"price\" : \"9.99\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/restapp/rest/pCats/4/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restapp",
+								"rest",
+								"pCats",
+								"4",
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"description": null,
+			"item": [
+				{
+					"name": "Post Comment 1 in Products 1 in Category 1",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"JW\",\n\t\"date\" : \"22-05-2018\",\n\t\"contents\" : \"Yolo\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/restapp/rest/pCats/1/products/1/comments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restapp",
+								"rest",
+								"pCats",
+								"1",
+								"products",
+								"1",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Comments from Product 1 in Category 1",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"JW\",\n\t\"date\" : \"22-05-2018\",\n\t\"contents\" : \"Yolo\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/restapp/rest/pCats/1/products/1/comments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restapp",
+								"rest",
+								"pCats",
+								"1",
+								"products",
+								"1",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Comment 1 in Products 1 in Category 1",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/restapp/rest/pCats/1/products/1/comments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restapp",
+								"rest",
+								"pCats",
+								"1",
+								"products",
+								"1",
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"description": "",
+			"item": [
+				{
+					"name": "Post Category GPU",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"categoryName\" : \"GPU\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/restapp/rest/pCats",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restapp",
+								"rest",
+								"pCats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Category HDD",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"categoryName\" : \"HDD\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/restapp/rest/pCats",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restapp",
+								"rest",
+								"pCats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Category Motherboard",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"categoryName\" : \"Motherboard\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/restapp/rest/pCats",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restapp",
+								"rest",
+								"pCats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Category RAM",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"categoryName\" : \"RAM\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/restapp/rest/pCats",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restapp",
+								"rest",
+								"pCats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/restapp/rest/pCats",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restapp",
+								"rest",
+								"pCats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category 3",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/restapp/rest/pCats/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restapp",
+								"rest",
+								"pCats",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Search",
+			"description": "",
+			"item": [
+				{
+					"name": "Search by Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/restapp/rest/search/productsByCategory=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restapp",
+								"rest",
+								"search",
+								"productsByCategory="
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

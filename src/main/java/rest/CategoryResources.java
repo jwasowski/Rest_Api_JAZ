@@ -35,18 +35,57 @@ public class CategoryResources {
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getAllProductCategory() {
-		List<ProductCategory> result = em.createNamedQuery("productCategory.all", ProductCategory.class)
-				.getResultList();
-		if (result == null) {
-			return Response.status(404).build();
+	public Response getAllProductCategory(@QueryParam("cName") String categoryName,
+			@QueryParam("name") String productName, @QueryParam("priceL") double priceL,
+			@QueryParam("priceH") double priceH) {
+		if (categoryName != null) {
+			List<Product> result = em.createNamedQuery("product.byPCatName", Product.class)
+					.setParameter("categoryName", "%"+categoryName+"%").getResultList();
+			if (result == null)
+				return Response.status(404).build();
+			List<ProductDto> productList = new ArrayList<ProductDto>();
+			int size = result.size();
+			for (int i = 0; i < size; i++) {
+				productList.add(mapEntitiesToDto.mapP(result.get(i)));
+			}
+			return Response.ok(productList).build();
 		}
-		List<ProductCategoryDto> productCategoryList = new ArrayList<ProductCategoryDto>();
-		int size = result.size();
-		for (int i = 0; i < size; i++) {
-			productCategoryList.add(mapEntitiesToDto.mapPC(result.get(i)));
+		if (productName != null) {
+			List<Product> result = em.createNamedQuery("product.byPName", Product.class)
+					.setParameter("productName", "%"+productName+"%").getResultList();
+			if (result == null)
+				return Response.status(404).build();
+			List<ProductDto> productList = new ArrayList<ProductDto>();
+			int size = result.size();
+			for (int i = 0; i < size; i++) {
+				productList.add(mapEntitiesToDto.mapP(result.get(i)));
+			}
+			return Response.ok(productList).build();
 		}
-		return Response.ok(productCategoryList).build();
+		if (priceL != 0 || priceH != 0) {
+			List<Product> result = em.createNamedQuery("product.byPPrice", Product.class).setParameter("priceL", priceL)
+					.setParameter("priceH", priceH).getResultList();
+			if (result == null)
+				return Response.status(404).build();
+			List<ProductDto> productList = new ArrayList<ProductDto>();
+			int size = result.size();
+			for (int i = 0; i < size; i++) {
+				productList.add(mapEntitiesToDto.mapP(result.get(i)));
+			}
+			return Response.ok(productList).build();
+		} else {
+			List<ProductCategory> result = em.createNamedQuery("productCategory.all", ProductCategory.class)
+					.getResultList();
+			if (result == null) {
+				return Response.status(404).build();
+			}
+			List<ProductCategoryDto> productCategoryList = new ArrayList<ProductCategoryDto>();
+			int size = result.size();
+			for (int i = 0; i < size; i++) {
+				productCategoryList.add(mapEntitiesToDto.mapPC(result.get(i)));
+			}
+			return Response.ok(productCategoryList).build();
+		}
 	}
 
 	@POST
@@ -201,57 +240,6 @@ public class CategoryResources {
 			return Response.status(404).build();
 		em.remove(result);
 		return Response.ok().build();
-	}
-
-	@GET
-	@Path("/{productCategoryId}/products")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response searchProductsByCategory(@QueryParam("name") String categoryName,
-			@PathParam("productCategoryId") int productCategoryId) {
-		List<Product> result = em.createNamedQuery("product.byPCatName", Product.class)
-				.setParameter("categoryName", categoryName).getResultList();
-		if (result == null)
-			return Response.status(404).build();
-		List<ProductDto> productList = new ArrayList<ProductDto>();
-		int size = result.size();
-		for (int i = 0; i < size; i++) {
-			productList.add(mapEntitiesToDto.mapP(result.get(i)));
-		}
-		return Response.ok(productList).build();
-	}
-
-	@GET
-	@Path("/{productCategoryId}/products")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response searchProductsByName(@QueryParam("name") String productName,
-			@PathParam("productCategoryId") int productCategoryId) {
-		List<Product> result = em.createNamedQuery("product.byPName", Product.class)
-				.setParameter("productName", productName).getResultList();
-		if (result == null)
-			return Response.status(404).build();
-		List<ProductDto> productList = new ArrayList<ProductDto>();
-		int size = result.size();
-		for (int i = 0; i < size; i++) {
-			productList.add(mapEntitiesToDto.mapP(result.get(i)));
-		}
-		return Response.ok(productList).build();
-	}
-
-	@GET
-	@Path("/{productCategoryId}/products")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response searchProductsByPrice(@QueryParam("pC") int pC, @QueryParam("price") int price,
-			@QueryParam("priceTwo") int priceTwo, @PathParam("productCategoryId") int productCategoryId) {
-		List<Product> result = em.createNamedQuery("productCategory.id", Product.class)
-				.setParameter("productCategoryId", pC).getResultList();
-		if (result == null)
-			return Response.status(404).build();
-		List<ProductDto> productList = new ArrayList<ProductDto>();
-		int size = result.size();
-		for (int i = 0; i < size; i++) {
-			productList.add(mapEntitiesToDto.mapP(result.get(i)));
-		}
-		return Response.ok(productList).build();
 	}
 
 }

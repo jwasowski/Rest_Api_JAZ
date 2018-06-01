@@ -24,9 +24,9 @@ import javax.xml.bind.annotation.XmlTransient;
 		@NamedQuery(name = "product.id", query = "SELECT p FROM Product p WHERE p.id=:productId"),
 		@NamedQuery(name = "product.byPCat", query = "SELECT p FROM Product p WHERE p.category.id=:productCategoryId"),
 		@NamedQuery(name = "product.byPCatAndPId", query = "SELECT p FROM Product p WHERE p.category.id=:productCategoryId AND p.id=:productId"),
-		@NamedQuery(name = "product.byPCatName", query = "SELECT p FROM Product p JOIN ProductCategory k ON p.category.id=k.id WHERE k.categoryName=:categoryName"),
-		@NamedQuery(name = "product.byPName", query = "SELECT p FROM Product p WHERE p.name LIKE :productName"),
-		@NamedQuery(name = "product.byPPrice", query = "SELECT p FROM Product p WHERE p.price >= :price AND p.price <= :priceTwo") })
+		@NamedQuery(name = "product.byPCatName", query = "SELECT p FROM Product p JOIN ProductCategory k ON p.category.id=k.id WHERE lower(k.categoryName) LIKE lower(:categoryName)"),
+		@NamedQuery(name = "product.byPName", query = "SELECT p FROM Product p WHERE lower(p.name) LIKE lower(:productName)"),
+		@NamedQuery(name = "product.byPPrice", query = "SELECT p FROM Product p WHERE p.price BETWEEN :priceL AND :priceH") })
 public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

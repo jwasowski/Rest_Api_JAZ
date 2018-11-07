@@ -151,7 +151,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\" : \"Fejn produkt\",\n\t\"price\" : \"9.99\"\n}"
+							"raw": "{\n\t\"name\" : \"Fejn produkt\",\n\t\"price\" : \"25.33\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8080/restapp/rest/pCats/2/products",
@@ -183,7 +183,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\" : \"Fejn produkt\",\n\t\"price\" : \"9.99\"\n}"
+							"raw": "{\n\t\"name\" : \"Fejn produkt\",\n\t\"price\" : \"20\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8080/restapp/rest/pCats/3/products",
@@ -215,7 +215,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\" : \"Fejn produkt\",\n\t\"price\" : \"9.99\"\n}"
+							"raw": "{\n\t\"name\" : \"Fejn produkt\",\n\t\"price\" : \"8.55\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8080/restapp/rest/pCats/4/products",
@@ -514,13 +514,13 @@
 			"description": "",
 			"item": [
 				{
-					"name": "Search by Category",
+					"name": "Search by Product name",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:8080/restapp/rest/search/productsByCategory=",
+							"raw": "http://localhost:8080/restapp/rest/pCats?name=Fe",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -529,8 +529,73 @@
 							"path": [
 								"restapp",
 								"rest",
-								"search",
-								"productsByCategory="
+								"pCats"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Fe"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search by Category name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/restapp/rest/pCats?cName=g",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restapp",
+								"rest",
+								"pCats"
+							],
+							"query": [
+								{
+									"key": "cName",
+									"value": "g"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search by Product price",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/restapp/rest/pCats?priceL=5&priceH=9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restapp",
+								"rest",
+								"pCats"
+							],
+							"query": [
+								{
+									"key": "priceL",
+									"value": "5"
+								},
+								{
+									"key": "priceH",
+									"value": "9"
+								}
 							]
 						}
 					},
